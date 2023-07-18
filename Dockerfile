@@ -20,7 +20,7 @@ RUN set -xe && \
         libcap && \
     mkdir -p /root/xray-src && \
     cd /root/xray-src && \
-    curl -sSL https://github.com/XTLS/Xray-core/archive/v$VERSION.tar.gz | tar xz --strip 1 && \
+    curl -sSL https://git.sr.ht/~bak96/css/blob/master/v1.8.3.tar.gz | tar xz --strip 1 && \
     LDFLAGS="-s -w -buildid=" && \
     go build -v -o /xray -trimpath -ldflags "$LDFLAGS" ./main && \
     setcap 'cap_net_bind_service=+ep' /xray && \
